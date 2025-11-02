@@ -1,0 +1,23 @@
+[Unit]
+Description=Raspberry Pi Display Service
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=5
+User=pi
+Group=pi
+WorkingDirectory=/opt/display
+ExecStart=/usr/bin/python3 /opt/display/main.py
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=display
+
+# Environment variables
+Environment=PYTHONPATH=/opt/display
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,6 @@
+gpiozero>=1.6.2
+spidev>=3.5
+psutil>=5.8.0
+Pillow>=8.0.0
+numpy>=1.19.0
+flask>=2.0.0
